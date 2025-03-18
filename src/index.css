@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+    @apply bg-gray-900 text-white;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+.backdrop-blur-md {
+  backdrop-filter: blur(12px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-600 rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500;
+}
+
+/* Focus Styles */
+*:focus-visible {
+  @apply outline-none ring-2 ring-orange-500 ring-offset-2 ring-offset-gray-900;
+}
+
+/* Gradient Text */
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-red-500;
+}
+
+/* Card Hover Effects */
+.hover-card {
+  @apply transition-all duration-300 hover:-translate-y-1;
+}
+
+/* Button Hover Effects */
+.button-hover {
+  @apply relative overflow-hidden transition-all duration-300;
+}
+
+.button-hover:after {
+  content: '';
+  @apply absolute inset-0 bg-white/10 transform -translate-x-full transition-transform duration-300;
+}
+
+.button-hover:hover:after {
+  @apply translate-x-0;
+}
+
+/* Input Focus Effects */
+.input-focus {
+  @apply transition-all duration-300;
+}
+
+.input-focus:focus {
+  @apply border-orange-500 ring-2 ring-orange-500/20;
+}
+
+/* Responsive Typography */
+@media (max-width: 640px) {
+  h1 {
+    @apply text-4xl;
+  }
+  
+  h2 {
+    @apply text-3xl;
+  }
+  
+  h3 {
+    @apply text-2xl;
+  }
+  
+  p {
+    @apply text-base;
+  }
+}
